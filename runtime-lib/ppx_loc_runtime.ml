@@ -1,4 +1,4 @@
-open! Core
+open! Base
 
 let take_last_element_in_dot_separated_string str =
   str |> String.split ~on:'.' |> List.last |> Option.value ~default:str
@@ -9,7 +9,7 @@ let take_last_element_in_dot_separated_string str =
 let looks_like_a_module_name segment =
   match String.is_empty segment with
   | true -> false
-  | false -> String.nget segment 0 |> Char.is_uppercase
+  | false -> String.get segment 0 |> Char.is_uppercase
 ;;
 
 (** e.g. "Library_name__Foo.Bar" *)
